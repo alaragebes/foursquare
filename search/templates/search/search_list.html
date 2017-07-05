@@ -1,0 +1,33 @@
+<body>
+
+
+  <h1>The ulimate Foursquare Client</h1>
+
+  <form method = 'POST'>
+    {% csrf_token %}
+    {{form}}
+    <input style="text-align: right" type="submit" value="Search"/>
+  </form>
+
+  <h2>Results</h2>
+
+  <h2 align="right">Previous Searches</h2>
+
+{% if results %}
+  {% for i in d %}
+
+  <table style = "width: 40%">
+    <tr>
+      <th>Name</th>
+      <th>Phone Number</th>
+      <th>Checkin Count</th>
+    </tr>
+    <tr>
+      <td>{{d.name}}</td>
+      <td>{{d.contact}}</td>
+      <td>{{d.checkincount}}</td>
+    </tr>
+  </table>
+  {% endfor %}
+{% endif %}
+</body>
