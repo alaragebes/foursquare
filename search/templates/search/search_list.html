@@ -17,6 +17,14 @@
       position: relative;
       float: right;
   }
+
+  form {
+    padding: 60px;
+  }
+
+  body > form > label{
+    font-weight: bold;
+  }
   </style>
 </head>
 
@@ -37,7 +45,7 @@
   <form method = 'POST'>
     {% csrf_token %}
     {{form}}
-    <input style="text-align: right" type="submit" value="Search"/>
+    <input type="submit" value="Search"/>
   </form>
 
   <h2 id="result">Results</h2>

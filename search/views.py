@@ -24,7 +24,7 @@ def search_list(request):
             data = json.loads(text)
             response = data["response"]
             venues = response["venues"]
-            return render(request, 'search/search_list.html', {'results' : results, "venues": venues, 'previous_searches': previous_searches})
+            return render(request, 'search/search_list.html', {'results' : results, "venues": venues, 'previous_searches': previous_searches, "form": form})
         else:
             form = WordForm()
             return render(request, 'search/search_list.html', {'results' : results, "venues": venues, 'previous_searches': previous_searches})
